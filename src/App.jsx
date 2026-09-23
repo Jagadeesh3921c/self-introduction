@@ -1,56 +1,76 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
 
+
+
+    import UserCard from "./UserCard";
 import "./App.css";
 
-function SelfIntroduction() {
+function App() {
+  const users = [
+    {
+      id: 1,
+      name: "Arun Kumar",
+      city: "Chennai",
+      age: 25,
+      email: "arun@gmail.com",
+      phone: "9876543210",
+    },
+    {
+      id: 2,
+      name: "Priya Sharma",
+      city: "Bangalore",
+      age: 23,
+      email: "priya@gmail.com",
+      phone: "9876543211",
+    },
+    {
+      id: 3,
+      name: "Karthik Reddy",
+      city: "Hyderabad",
+      age: 27,
+      email: "karthik@gmail.com",
+      phone: "9876543212",
+    },
+    {
+      id: 4,
+      name: "Divya Singh",
+      city: "Mumbai",
+      age: 24,
+      email: "divya@gmail.com",
+      phone: "9876543213",
+    },
+    {
+      id: 5,
+      name: "Rahul Verma",
+      city: "Delhi",
+      age: 26,
+      email: "rahul@gmail.com",
+      phone: "9876543214",
+    },
+  ];
+
   return (
-    <div className="profile">
-      <h1>Self Introduction</h1>
+    <div className="app">
+      <h1>User Management</h1>
+      <p className="subtitle">Parent → Child Data Passing Using Props</p>
 
-      <h2>Jagadeesh</h2>
-
-      <p><strong>Profile:</strong> Frontend Developer</p>
-
-      <p><strong>Education:</strong> Bachelor of Technology</p>
-
-      <p>
-        <strong>Skills:</strong> HTML, CSS, JavaScript, React JS
-      </p>
-
-      <p>
-        <strong>Experience:</strong> Fresher
-      </p>
-
-      <p>
-        <strong>Hobbies:</strong> Learning new technologies, coding, and
-        listening to music
-      </p>
-
-      <p>
-        <strong>Career Goal:</strong> To become a professional Full Stack
-        Developer.
-      </p>
+      <div className="user-container">
+        {users.map((user) => (
+          <UserCard
+            key={user.id}
+            name={user.name}
+            city={user.city}
+            age={user.age}
+            email={user.email}
+            phone={user.phone}
+          />
+        ))}
+      </div>
     </div>
   );
 }
 
-function App() {
-  return (
-    <>
-      <SelfIntroduction />
-    </>
-  );
-}
-
 export default App;
+      
 
-
-
-
-
-
+    
 
